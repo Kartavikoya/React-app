@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Example 1: Simple Counter with Const Functions
 export function Counter() {
@@ -34,12 +34,66 @@ export function Counter() {
   );
 }
 
+export function Switch(){
+      const [isOn, SetSwitch] = useState(false);
 
-// Example 2: Login with Condition Functions
+      const handle = ()=>{
+         SetSwitch(!isOn);
+      }
 
+   return (
+    <div>
+      <h2>Switch</h2>
+        <button onClick={handle} style={{ padding: '10px 20px', marginRight: '10px' }}>
+          {isOn ? 'Turn Off' : 'Turn On'}
+        </button>   
+        {/* <p>
+          Switch Status: <strong>{isOn ? 'ON' : 'OFF'}</strong>
+        </p> */}
+        <p> 
+            <button style={{backgroundColor: isOn ? 'green' : 'red'}} variant="success">Switch</button>
+        </p>
+        
+    </div>
+    
+  );
+}
 
-// Example 3: Age Checker with Const Functions
+export function Stopwatch(){
+    const [minutes, setMins] = useState(1);
+    const [seconds, setSeconds] = useState(0);
 
+    const handleDecrement = () => {
+        setSeconds(prevSeconds => {
+            if (prevSeconds === 0) {
+                setMins(prevMins => {
+                    if (prevMins === 0) {
+                        return 0;
+                    }
+                    return prevMins - 1;
+                });
+                return 59;
+            }
+            return prevSeconds - 1;
+        });
+    };
+
+    const handleReset = () => {
+        setMins(0);
+        setSeconds(0);
+    };
+
+  return(
+    <div>
+        <h2>Stopwatch</h2>
+        <input type="number" value={minutes} onChange={(e) => setMins(Number(e.target.value))} placeholder="Minutes" />
+        <button onClick={handleDecrement}>Decrement</button>
+        <button onClick={handleReset}>Reset</button> <br/>
+        <p>{minutes.toString().padStart(2, "0")} : {seconds.toString().padStart(2, "0")}</p><br/>
+    </div>
+  ) 
+
+}
 
 // Main component combining all examples
 export default function UseStateExamples() {
@@ -47,6 +101,10 @@ export default function UseStateExamples() {
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h1>useState with Const Functions & Conditions</h1>
       <Counter />
+      <hr />
+      <Switch/>
+      <hr />
+      <Stopwatch/>
     </div>
   );
 }
