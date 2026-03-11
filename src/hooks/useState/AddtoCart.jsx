@@ -27,6 +27,22 @@ const AddtoCart = (id) => {
     });
 };
 
+const RemoveCart = (id) => {
+    setCart(prev => {
+      const existing = prev.find(i => i.id === id);
+      if (existing) {
+        if (existing.qty > 1) {
+          return prev.map(i =>
+            i.id === id ? { ...i, qty: i.qty - 1 } : i
+          );
+        } else {
+          return prev.filter(i => i.id !== id);
+        }
+      }
+      return prev;
+    });
+}
+
     
   return (
     <>
@@ -49,7 +65,7 @@ const AddtoCart = (id) => {
                 ) : (
                   cart.map(item => (
                     <div key={item.id}>
-                      <span>{item.brandName} x{item.qty}</span>
+                      <span>{item.brandName} {item.qty} - <button onClick={() => RemoveCart(item.id)}>Remove</button></span>
                     </div>
                   ))
                 )
