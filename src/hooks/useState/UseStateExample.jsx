@@ -17,6 +17,8 @@ export function Counter() {
     setCount(0);
   };
 
+ 
+
   // Condition: check if count is positive
   const isPositive = count > 0;
 
