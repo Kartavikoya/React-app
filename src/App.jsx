@@ -5,6 +5,7 @@ import Brand from './hooks/useState/BrandFilter.jsx';
 import Cart from './hooks/useState/AddtoCart.jsx';
 import UseRefExamples from './hooks/useRef/UseRefExample.jsx';
 import DomManipu from './hooks/useRef/DomManipulationref.jsx';
+import UseReducerExamples from './hooks/useReducer/UseReducerExample.jsx';
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <Obj/>
       <Brand/>
       <Cart/> */}
-      <UseRefExamples/>
-      <DomManipu/>
+      {/* <UseRefExamples/>
+      <DomManipu/> */}
+      <UseReducerExamples/>
     </>
   );
 }
