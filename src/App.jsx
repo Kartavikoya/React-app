@@ -3,16 +3,20 @@ import Props from './hooks/useState/Props.jsx'
 import Obj from './hooks/useState/UpdatingObjects.jsx';
 import Brand from './hooks/useState/BrandFilter.jsx';
 import Cart from './hooks/useState/AddtoCart.jsx';
+import UseRefExamples from './hooks/useRef/UseRefExample.jsx';
+import DomManipu from './hooks/useRef/DomManipulationref.jsx';
 
 function App() {
   return (
     <>
       {/* show examples and props component */}
-      <UseStateExamples />
+      {/* <UseStateExamples />
       <Props />
       <Obj/>
       <Brand/>
-      <Cart/>
+      <Cart/> */}
+      <UseRefExamples/>
+      <DomManipu/>
     </>
   );
 }
