@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { Text } from "../Text";
+import { useCount } from "../../context/count-context";
 
-export const Button = ({count, onButtonClick}) =>{
+export const Button = () =>{
     
+    const {count, setCount} = useCount();
+
+    const onButtonClick =() =>{
+        setCount(count + 1)
+    }
 
     return(
         <>
             <button onClick={onButtonClick}>Click to increment</button>
-            <Text count={count}/> 
+            <Text/> 
         </>
     )
 }

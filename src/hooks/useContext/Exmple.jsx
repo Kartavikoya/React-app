@@ -1,16 +1,29 @@
 import { useReducer, useState } from "react";
 import { Button } from "../../components/Buttons";
+import { useCount } from "../../context/count-context";
 
 function Demo(){
+    
+    // const {count, SetCount} = useCount();
 
-    const [count, SetCount] = useState(0);
+    // global
+    const {count, setCount} = useCount();
+
+
+    // console.log(value);
+    
+
+    // const [count, SetCount] = useState(0);
 
     const onButtonClick = () =>{
-        SetCount(count + 1);
+        setCount(count + 1);
     }
     return(
         <>
-            <Button count={count} onButtonClick={onButtonClick}/>
+            {/* <Button count={count} onButtonClick={onButtonClick}/> */}
+
+            {/* global */}
+            <Button />
         </>
     );
 }
