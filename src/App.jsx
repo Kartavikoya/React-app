@@ -7,7 +7,8 @@ import UseRefExamples from './hooks/useRef/UseRefExample.jsx';
 import DomManipu from './hooks/useRef/DomManipulationref.jsx';
 import UseReducerExamples from './hooks/useReducer/UseReducerExample.jsx';
 import UseContext from './hooks/useContext/Exmple.jsx';
-import E1 from './hooks/contextandreducer/FirstExample.jsx';
+// import E1 from './hooks/contextandreducer/FirstExample.jsx';
+import Redu1 from './ReduxExample/reduxexmp.jsx'; 
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       <DomManipu/> */}
       {/* <UseReducerExamples/> */}
       {/* <UseContext/> */}
-      <E1/>
+      {/* <E1/> */}
+      <Redu1/>
     </>
   );
 }
